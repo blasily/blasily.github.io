@@ -1,47 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Discord / Open Graph Preview Tags -->
-    <meta property="og:title" content="Blasily | Audio Portfolio" />
-    <meta property="og:description" content="Music composer & Sound designer! I make music for games ^^" />
-    <meta property="og:url" content="https://blasily.netlify.app/" />
-    <meta property="og:image" content="https://blasily.netlify.app/preview.png" />
-    <meta name="twitter:card" content="summary_large_image" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Blasily | Audio Portfolio</title>
+  <!-- Discord / Open Graph Preview Tags -->
+  <meta property="og:title" content="Blasily | Audio Portfolio" />
+  <meta property="og:description" content="Music composer & Sound designer! I make music for games ^^" />
+  <meta property="og:url" content="https://blasily.netlify.app/" />
+  <meta property="og:image" content="https://blasily.netlify.app/preview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <title>Blasily | Audio Portfolio</title>
 
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <main class="container">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
-      <header>
-        <h1>Hey, I'm <span class="name">Blasily</span></h1>
-        <p class="bio">Music composer & Sound designer! I make music for games ^^</p>
-        <p class="bio">Also the website layout is a bit broken but I'll fix it soon</p>
-      </header>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-      <!-- The Navigation Menu (Now powered by the script at the bottom) -->
-      <nav class="main-nav">
-        <a href="#" onclick="switchPage('audio')" id="nav-audio" class="active">Audio</a>
-        <a href="#" onclick="switchPage('games')" id="nav-games">Games</a>
-        <a href="#" onclick="switchPage('testimonials')" id="nav-testimonials">Testimonials</a>
-      </nav>
+<body>
+  <main class="container">
 
-      <!-- ========================================== -->
-      <!-- PAGE 1: AUDIO -->
-      <!-- ========================================== -->
-      <section id="audio-page" class="page-section">
-        <h2>Stuff I made recently</h2>
+    <header>
+      <h1>Hey, I'm <span class="name">Blasily</span></h1>
+      <p class="bio">Music composer & Sound designer! I make music for games ^^</p>
+    </header>
 
+    <!-- The Navigation Menu -->
+    <nav class="main-nav">
+      <a href="#audio" onclick="switchPage('audio', event)" id="nav-audio" class="active">Audio</a>
+      <a href="#games" onclick="switchPage('games', event)" id="nav-games">Games</a>
+      <a href="#testimonials" onclick="switchPage('testimonials', event)" id="nav-testimonials">Testimonials</a>
+    </nav>
+
+    <!-- ========================================== -->
+    <!-- AUDIO                                      -->
+    <!-- ========================================== -->
+    <section id="audio-page" class="page-section">
+      <h2>Stuff I made recently</h2>
+      <div class="tracks">
         <div class="track-row">
           <div class="track-header">
             <h3>Curious Light atmospheric remix</h3>
@@ -49,7 +50,8 @@
               <audio controls src="audio/overgrowth_curious-light.ogg"></audio>
             </div>
           </div>
-          <p class="track-desc">I made this to practise textures and background stuff; I'm pretty proud of it. Made for a game I co-own called <i>OVERGROWTH</i>.</p>
+          <p class="track-desc">I made this to practise textures and background stuff; I'm pretty proud of it. Made for
+            a game I co-own called <i>OVERGROWTH</i>.</p>
         </div>
 
         <div class="track-row">
@@ -69,9 +71,7 @@
               <audio controls src="audio/pretty-song.ogg"></audio>
             </div>
           </div>
-          <p class="track-desc"></p>
         </div>
-
 
         <div class="track-row">
           <div class="track-header">
@@ -80,13 +80,14 @@
               <audio controls src="audio/transition.ogg"></audio>
             </div>
           </div>
-          <p class="track-desc"></p>
         </div>
+      </div>
 
-        <h2>Old stuff that I still like</h2>
-
+      <h2>Old stuff that I still like</h2>
+      <div class="tracks">
         <div class="track-row">
           <div class="track-header">
+            <h3>Caves lobby</h3>
             <div class="audio-container">
               <audio controls src="audio/caves_lobby.ogg"></audio>
             </div>
@@ -94,27 +95,28 @@
         </div>
 
         <div class="track-row">
-          <h3>Lobby theme "inspired" by <i>The Foundation</i></h3>
           <div class="track-header">
+            <h3>Lobby theme "inspired" by <i>The Foundation</i></h3>
             <div class="audio-container">
               <audio controls src="audio/aboklobbything.ogg"></audio>
             </div>
-            <p class="track-desc">Basically a copy but whatever</p>
           </div>
+          <p class="track-desc">Basically a copy but whatever</p>
         </div>
 
         <div class="track-row">
-          <h3>Sounds like water</h3>
           <div class="track-header">
+            <h3>Sounds like water</h3>
             <div class="audio-container">
               <audio controls src="audio/botanica.wav"></audio>
             </div>
-            <p class="track-desc">I made this in early 2025 wow</p>
           </div>
+          <p class="track-desc">I made this in early 2025 wow</p>
         </div>
+      </div>
 
-        <h2>Other</h2>
-
+      <h2>Other</h2>
+      <div class="tracks">
         <div class="track-row">
           <div class="track-header">
             <h3>Metal guitar VST practice</h3>
@@ -134,19 +136,18 @@
           </div>
           <p class="track-desc">hi acer</p>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- ========================================== -->
-      <!-- PAGE 2: GAMES -->
-      <!-- ========================================== -->
-      <section id="games-page" class="page-section" style="display: none;">
-        <h2>Games & Projects</h2>
-
+    <!-- ========================================== -->
+    <!-- GAMES                                      -->
+    <!-- ========================================== -->
+    <section id="games-page" class="page-section" style="display: none;">
+      <h2>Games & Projects</h2>
+      <div class="games">
         <!-- OVERGROWTH -->
-        <a href="https://discord.gg/Hwte3jEJKm" target="_blank" class="game-row game-link">
-
+        <a href="https://discord.gg/Hwte3jEJKm" target="_blank" rel="noopener noreferrer" class="game-row game-link">
           <div class="game-left">
-
             <div class="game-info">
               <h3>OVERGROWTH</h3>
               <p class="studio">Co-owner</p>
@@ -161,67 +162,77 @@
 
         <!-- PROTOCOL -->
         <!-- <div class="game-row">
-          <div class="game-left">
-            <div class="game-info">
-              <h3>PROTOCOL</h3>
-              <p class="studio">Lead Developer</p>
+            <div class="game-left">
+              <div class="game-info">
+                <h3>PROTOCOL</h3>
+                <p class="studio">Lead Developer</p>
+              </div>
             </div>
-          </div>
 
-          <div class="game-details">
-            <span class="role">Lead Composer, Sound & Programmer</span>
-            <span class="status">In Development</span>
-          </div>
-        </div> -->
+            <div class="game-details">
+              <span class="role">Lead Composer, Sound & Programmer</span>
+              <span class="status">In Development</span>
+            </div>
+          </div> -->
+      </div>
+    </section>
 
-      </section>
+    <!-- ========================================== -->
+    <!-- TESTIMONIALS                               -->
+    <!-- ========================================== -->
+    <section id="testimonials-page" class="page-section" style="display: none;">
+      <h2>Testimonials</h2>
 
-      <!-- ========================================== -->
-      <!-- PAGE 3: TESTIMONIALS -->
-      <!-- ========================================== -->
-      <section id="testimonials-page" class="page-section" style="display: none;">
-        <h2>Testimonials</h2>
-
-        <!-- Quote 1 -->
-        <div class="quote-block">
-          <p class="quote-text">"ill get the first quote soon hhah"</p>
-          <div class="quote-author">
-            <span class="author-name">soon i swear</span>
-            <span class="author-role">yea</span>
-          </div>
+      <!-- Quote 1 -->
+      <div class="quote-block">
+        <p class="quote-text">"ill get the first quote soon hhah"</p>
+        <div class="quote-author">
+          <span class="author-name">soon i swear</span>
+          <span class="author-role">yea</span>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <footer>
-        <h2>Contact & Links</h2>
-        <div class="links">
-          <a href="https://discord.gg/5BvVWpfBSv" target="_blank" rel="noopener noreferrer">Discord: @blasily</a>
-          <a href="https://www.youtube.com/@blasily" target="_blank" rel="noopener noreferrer">Youtube (more music)</a>
-          <a href="https://www.youtube.com/@blasily2" target="_blank" rel="noopener noreferrer">Second Youtube</a>
-        </div>
-      </footer>
+    <footer>
+      <h2>Contact & Links</h2>
+      <div class="links">
+        <a href="https://discord.gg/5BvVWpfBSv" target="_blank" rel="noopener noreferrer">Discord: @blasily</a>
+        <a href="https://www.youtube.com/@blasily" target="_blank" rel="noopener noreferrer">Youtube (more music)</a>
+        <a href="https://www.youtube.com/@blasily2" target="_blank" rel="noopener noreferrer">Second Youtube</a>
+      </div>
+    </footer>
 
-    </main>
+  </main>
 
-    <!-- The Magic Script that instantly swaps the sections when you click a tab -->
-    <script>
-      function switchPage(pageId) {
-        // 1. Hide all pages
-        document.querySelectorAll('.page-section').forEach(page => {
-          page.style.display = 'none';
+  <!-- Tabs -->
+  <script>
+    function switchPage(pageId, event) {
+      if (event) event.preventDefault();
+
+      document.querySelectorAll('.page-section').forEach(page => {
+        page.style.display = 'none';
+      });
+
+      document.querySelectorAll('.main-nav a').forEach(link => {
+        link.classList.remove('active');
+      });
+
+      document.getElementById(pageId + '-page').style.display = 'block';
+
+      document.getElementById('nav-' + pageId).classList.add('active');
+    }
+
+    const audioPlayers = document.querySelectorAll('audio');
+    audioPlayers.forEach(player => {
+      player.addEventListener('play', () => {
+        audioPlayers.forEach(otherPlayer => {
+          if (otherPlayer !== player) {
+            otherPlayer.pause();
+          }
         });
+      });
+    });
+  </script>
+</body>
 
-        // 2. Remove the purple highlight from all nav links
-        document.querySelectorAll('.main-nav a').forEach(link => {
-          link.classList.remove('active');
-        });
-
-        // 3. Show the specific page you clicked
-        document.getElementById(pageId + '-page').style.display = 'block';
-
-        // 4. Add the purple highlight to the link you just clicked
-        document.getElementById('nav-' + pageId).classList.add('active');
-      }
-    </script>
-  </body>
 </html>
