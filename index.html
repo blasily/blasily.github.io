@@ -7,9 +7,9 @@
 
   <!-- Discord / Open Graph Preview Tags -->
   <meta property="og:title" content="Blasily | Audio Portfolio" />
-  <meta property="og:description" content="Music composer & Sound designer! I make music for games ^^" />
-  <meta property="og:url" content="https://blasily.netlify.app/" />
-  <meta property="og:image" content="https://blasily.netlify.app/preview.png" />
+  <meta name="description" content="Blasily is a composer and sound designer making music and audio for games." />
+  <meta property="og:description" content="Composer and sound designer making music and audio for games." />
+  <meta property="og:url" content="https://blasily.github.io/" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <title>Blasily | Audio Portfolio</title>
@@ -27,14 +27,13 @@
 
     <header>
       <h1>Hey, I'm <span class="name">Blasily</span></h1>
-      <p class="bio">Music composer & Sound designer! I make music for games ^^</p>
+      <p class="bio">Composer and sound designer making music for games.</p>
     </header>
 
     <!-- The Navigation Menu -->
-    <nav class="main-nav">
-      <a href="#audio" onclick="switchPage('audio', event)" id="nav-audio" class="active">Audio</a>
+    <nav class="main-nav" aria-label="Portfolio sections">
+      <a href="#audio" onclick="switchPage('audio', event)" id="nav-audio" class="active" aria-current="page">Audio</a>
       <a href="#games" onclick="switchPage('games', event)" id="nav-games">Games</a>
-      <a href="#testimonials" onclick="switchPage('testimonials', event)" id="nav-testimonials">Testimonials</a>
     </nav>
 
     <!-- ========================================== -->
@@ -56,7 +55,7 @@
 
         <div class="track-row">
           <div class="track-header">
-            <h3>Cinematic boss music (just a loop. WIP)</h3>
+            <h3>Boss theme sketch (work in progress)</h3>
             <div class="audio-container">
               <audio controls src="audio/overgrowth_boss-music-NO-NAME-LEAK-HAHA-LOSER.ogg"></audio>
             </div>
@@ -66,7 +65,7 @@
 
         <div class="track-row">
           <div class="track-header">
-            <h3>I don't know what to call this, it's pretty</h3>
+            <h3>Melodic sketch</h3>
             <div class="audio-container">
               <audio controls src="audio/pretty-song.ogg"></audio>
             </div>
@@ -101,7 +100,7 @@
               <audio controls src="audio/aboklobbything.ogg"></audio>
             </div>
           </div>
-          <p class="track-desc">Basically a copy but whatever</p>
+          <p class="track-desc">A fan-made study inspired by <i>The Foundation</i>.</p>
         </div>
 
         <div class="track-row">
@@ -115,7 +114,7 @@
         </div>
       </div>
 
-      <h2>Other</h2>
+      <h2>Remakes &amp; experiments</h2>
       <div class="tracks">
         <div class="track-row">
           <div class="track-header">
@@ -156,7 +155,7 @@
 
           <div class="game-details">
             <span class="role">Lead Composer, Sound & Programmer</span>
-            <span class="status">In Development</span>
+            <span class="status">In development</span>
           </div>
         </a>
 
@@ -174,22 +173,6 @@
               <span class="status">In Development</span>
             </div>
           </div> -->
-      </div>
-    </section>
-
-    <!-- ========================================== -->
-    <!-- TESTIMONIALS                               -->
-    <!-- ========================================== -->
-    <section id="testimonials-page" class="page-section" style="display: none;">
-      <h2>Testimonials</h2>
-
-      <!-- Quote 1 -->
-      <div class="quote-block">
-        <p class="quote-text">"ill get the first quote soon hhah"</p>
-        <div class="quote-author">
-          <span class="author-name">soon i swear</span>
-          <span class="author-role">yea</span>
-        </div>
       </div>
     </section>
 
@@ -215,11 +198,20 @@
 
       document.querySelectorAll('.main-nav a').forEach(link => {
         link.classList.remove('active');
+        link.removeAttribute('aria-current');
       });
 
       document.getElementById(pageId + '-page').style.display = 'block';
 
-      document.getElementById('nav-' + pageId).classList.add('active');
+      const activeLink = document.getElementById('nav-' + pageId);
+      activeLink.classList.add('active');
+      activeLink.setAttribute('aria-current', 'page');
+      history.replaceState(null, '', '#' + pageId);
+    }
+
+    const initialPage = window.location.hash.slice(1);
+    if (['audio', 'games'].includes(initialPage)) {
+      switchPage(initialPage);
     }
 
     const audioPlayers = document.querySelectorAll('audio');
