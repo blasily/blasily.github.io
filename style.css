@@ -324,6 +324,23 @@ a:hover {
   border-bottom: 2px dashed var(--purple-accent);
 }
 
+a:focus-visible {
+  outline: 2px solid var(--purple-accent);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* ========================================== */
 /* MOBILE RESPONSIVE FIXES                    */
 /* ========================================== */
